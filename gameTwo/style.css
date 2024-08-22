@@ -1,0 +1,21 @@
+#image {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+#container1 {
+    width: 50%;
+    height: 50vh;
+    background-color: rgb(220, 220, 9);
+}
+#container2 {
+    width: 50%;
+    height: 50vh;
+    background-color: rgb(51, 170, 144);
+}
+
+canvas {
+    border: 1px solid black;
+}
+

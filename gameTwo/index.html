@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<style>
+    .object {
+        width: 100px;
+        aspect-ratio: 1/2;
+        background-color: green;
+    }
+
+    #alert-message {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: rgb(159, 43, 43);
+        color: #FFF;
+        padding: 10px;
+        display: none;
+    }
+
+    .objects-grid-3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .objects-grid-4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+</style>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="objects-grid-3">
+        <div class="object"></div>
+        <div class="object"></div>
+        <div class="object"></div>
+    </div>
+
+    <div class="objects-grid-4">
+        <div class="object"></div>
+        <div class="object"></div>
+        <div class="object"></div>
+        <div class="object"></div>
+    </div>
+
+    <div class="objects-grid-3">
+        <div class="object"></div>
+        <div class="object"></div>
+    </div>
+
+
+    <div id="alert-message"></div>
+
+    <script>
+        const objects = document.getElementsByClassName('object')
+        const alertMessage = document.getElementById('alert-message')
+        let currentScore = 10;
+
+        for (let index = 0; index < objects.length; index++) {
+            objects[index].addEventListener('mouseenter', function (e) {
+
+                if (currentScore > 0)
+                    currentScore--
+
+                if (alertMessage.style.display == 'block')
+                    alertMessage.style.display = 'none'
+
+                sendMessage(currentScore)
+            })
+        }
+
+        function sendMessage(CurrentScore) {
+
+            alertMessage.innerHTML = ""
+            alertMessage.innerHTML = currentScore <= 0 ? 'IDIOT !' : `TOUCHE !<br />${alertMessage.textContent} Il vous reste ${currentScore} points.`
+            alertMessage.style.display = 'block'
+
+            setTimeout(() => {
+                alertMessage.style.display = 'none'
+            }, 5000);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+.circle {
+    width: 100px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: lightgreen;
+    position: absolute;
+    transition: 0.5s;
+}
+#full-banner {
+    height: 100vh;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice de Somme</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .calculator {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .calculator input, .calculator button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .calculator button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .calculator button:hover {
+            background-color: #218838;
+        }
+        .result {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Calculatrice de Somme</h1>
+        <input type="number" id="number1" placeholder="Nombre 1">
+        <input type="number" id="number2" placeholder="Nombre 2">
+        <button onclick="calculateSum()">Calculer la Somme</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateSum() {
+            
+            const num1 = parseFloat(document.getElementById('number1').value);
+            const num2 = parseFloat(document.getElementById('number2').value);
+            
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('result').textContent = 'Veuillez entrer des nombres valides.';
+                var element = document.getElementById('result');
+                element.style.backgroundColor = 'red';
+                return;
+            }
+
+            if(result == 0) {
+                
+                document.getElementById('result').textContent = 'La somme est : 0';
+                var element = document.getElementById('result');
+                element.style.backgroundColor = 'grey';
+            }
+
+            else {
+                const sum = num1 + num2;
+                document.getElementById('result').textContent = 'La somme est : ' + sum;
+                var element = document.getElementById('result');
+                element.style.backgroundColor = 'green';
+
+            }
+
+            
+           
+            
+            
+            
+          
+        }
+    </script>
+</body>
+</html>
